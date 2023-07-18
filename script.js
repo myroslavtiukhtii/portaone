@@ -17,13 +17,20 @@ function getUniqueSymbol(text) {
         uniqueLetters.push(uniq[0]);
     });
 
-    let uniqueArray = uniqueLetters.filter((item, index) => {
-        return uniqueLetters.indexOf(item) === index;
+    let finalLetters = [];
+
+    uniqueLetters.forEach((item) => {
+        if (finalLetters.includes(item)) {
+            finalLetters.splice(finalLetters.indexOf(item), 1)
+        } else {
+            finalLetters.push(item);
+        }
     });
     
     
+    
 
-    return uniqueArray[0];
+    return finalLetters[0];
 }
 
 
