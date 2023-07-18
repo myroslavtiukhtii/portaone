@@ -16,12 +16,14 @@ function getUniqueSymbol(text) {
         }
         uniqueLetters.push(uniq[0]);
     });
+
+    let uniqueArray = uniqueLetters.filter((item, index) => {
+        return uniqueLetters.indexOf(item) === index;
+    });
     
-    let uniqueChars = [...new Set(uniqueLetters)];
+    
 
-    var intersections = uniqueChars.filter(e => uniqueLetters.indexOf(e) !== -1);
-
-    return intersections;
+    return uniqueArray[0];
 }
 
 
